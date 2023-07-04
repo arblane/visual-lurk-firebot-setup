@@ -1,0 +1,38 @@
+<style>
+.roundback {
+	border-radius: 25px;
+	background: linear-gradient(300deg,#8412c3,#aa5dd5,#52057c);
+	font-family: Arial, sans-serif;
+	text-align: center;
+	padding: 10px;
+	width: 300px;
+	height: 400px;
+	position: fixed;
+	margin: 0 auto;
+	right: 20px;
+	top: 100px;
+}
+.image-container, .text-container {
+	display: inline-block;
+	vertical-align: middle;
+}
+.image-container img {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+}
+h1, h2 {
+	color: white;
+	text-transform: uppercase;
+	line-height: 10px;
+}
+</style>
+<div class="roundback">
+	<div class="text-container">
+		<h1>$customVariable[LurkType]</h1>
+		<h2>$presetListArg[user]</h2>
+	</div>
+	<div class="image-container">
+		<img src="$userAvatarUrl[$presetListArg[user]]" alt="profile image">
+	</div>
+</div>
