@@ -8,6 +8,7 @@ Install
 Usage
 + Requirements for Chat
 + Must be following the channel
+
 Commands for Chat
 + !lurk
 + !unlurk (!back)
