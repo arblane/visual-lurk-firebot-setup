@@ -1,0 +1,268 @@
+{
+  "name": "VisualLurk",
+  "description": "Allows chat to set lurk status with a quiet on screen popup",
+  "version": 1,
+  "author": "arblane",
+  "components": {
+    "commands": [
+      {
+        "active": true,
+        "simple": false,
+        "sendCooldownMessage": true,
+        "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+        "cooldown": {},
+        "effects": {
+          "id": "53867caa-387f-47b6-a58d-a11d49602653",
+          "list": [
+            {
+              "id": "9f112930-dbbc-11ed-99c3-c983bb9904e0",
+              "type": "firebot:run-effect-list",
+              "active": true,
+              "listType": "preset",
+              "presetListArgs": {
+                "user": "$username",
+                "lurktype": "$commandTrigger"
+              },
+              "effectList": {
+                "list": [],
+                "id": "9f134c10-dbbc-11ed-99c3-c983bb9904e0"
+              },
+              "presetListId": "d1d0d960-1a82-11ee-bccf-ab1038f73fb5"
+            }
+          ]
+        },
+        "restrictionData": {
+          "restrictions": [],
+          "mode": "all",
+          "sendFailMessage": true,
+          "failMessage": "Sorry, you cannot use this command because: {reason}"
+        },
+        "aliases": [],
+        "sortTags": [],
+        "treatQuotedTextAsSingleArg": false,
+        "trigger": "!lurk",
+        "id": "35508cc0-ce6a-11ed-a85b-135af14bc7e9",
+        "createdBy": "arblane",
+        "createdAt": "2023-03-29T15:45:07-04:00",
+        "count": 46,
+        "lastEditBy": "arblane",
+        "lastEditAt": "2023-07-04T12:06:54-04:00",
+        "ignoreBot": true,
+        "description": "You are here, but not active."
+      },
+      {
+        "active": true,
+        "simple": false,
+        "sendCooldownMessage": true,
+        "cooldownMessage": "This command is still on cooldown for: {timeLeft}",
+        "cooldown": {},
+        "effects": {
+          "id": "58a89cf6-bf4a-4dfd-b50d-4d50d42a9c39",
+          "list": [
+            {
+              "id": "bf864140-e130-11ed-9b56-ddd81a7af71a",
+              "type": "firebot:run-effect-list",
+              "active": true,
+              "listType": "preset",
+              "presetListArgs": {
+                "lurktype": "$commandTrigger",
+                "user": "$username"
+              },
+              "effectList": {
+                "list": [],
+                "id": "bf894e80-e130-11ed-9b56-ddd81a7af71a"
+              },
+              "presetListId": "d1d0d960-1a82-11ee-bccf-ab1038f73fb5"
+            }
+          ]
+        },
+        "restrictionData": {
+          "restrictions": [],
+          "mode": "all",
+          "sendFailMessage": true,
+          "failMessage": "Sorry, you cannot use this command because: {reason}"
+        },
+        "aliases": [
+          "!back"
+        ],
+        "sortTags": [],
+        "treatQuotedTextAsSingleArg": false,
+        "trigger": "!unlurk",
+        "id": "468db260-ce6a-11ed-a85b-135af14bc7e9",
+        "createdBy": "arblane",
+        "createdAt": "2023-03-29T15:45:36-04:00",
+        "count": 13,
+        "lastEditBy": "arblane",
+        "lastEditAt": "2023-07-04T12:07:04-04:00",
+        "ignoreBot": true,
+        "description": "You are back"
+      }
+    ],
+    "counters": [],
+    "currencies": [],
+    "effectQueues": [],
+    "events": [],
+    "eventGroups": [],
+    "hotkeys": [],
+    "presetEffectLists": [
+      {
+        "name": "VisualLurk",
+        "effects": {
+          "list": [
+            {
+              "id": "d1d0b250-1a82-11ee-8f05-c7c6901b16f6",
+              "type": "firebot:conditional-effects",
+              "active": true,
+              "ifs": [
+                {
+                  "conditionData": {
+                    "mode": "exclusive",
+                    "conditions": [
+                      {
+                        "type": "firebot:custom",
+                        "comparisonType": "is",
+                        "value": null,
+                        "leftSideValue": "$presetListArg[lurktype]",
+                        "rightSideValue": "!lurk"
+                      }
+                    ]
+                  },
+                  "effectData": {
+                    "list": [
+                      {
+                        "id": "d1d0b251-1a82-11ee-8f05-c7c6901b16f6",
+                        "type": "firebot:chat",
+                        "active": true,
+                        "chatter": "Bot",
+                        "message": "$user has switched into lurk mode. Have a good lurk and thanks!"
+                      }
+                    ],
+                    "id": "d1d0b252-1a82-11ee-8f05-c7c6901b16f6"
+                  }
+                }
+              ],
+              "otherwiseEffectData": {
+                "list": [
+                  {
+                    "id": "d1d0b253-1a82-11ee-8f05-c7c6901b16f6",
+                    "type": "firebot:chat",
+                    "active": true,
+                    "chatter": "Bot",
+                    "message": "$user has switched back into active mode. Welcome back $user!"
+                  }
+                ],
+                "id": "d1d0b254-1a82-11ee-8f05-c7c6901b16f6"
+              }
+            },
+            {
+              "id": "d1d0b255-1a82-11ee-8f05-c7c6901b16f6",
+              "type": "firebot:conditional-effects",
+              "active": true,
+              "ifs": [
+                {
+                  "conditionData": {
+                    "mode": "exclusive",
+                    "conditions": [
+                      {
+                        "type": "firebot:followcheck",
+                        "comparisonType": "follows",
+                        "value": null,
+                        "rightSideValue": "$streamer"
+                      }
+                    ]
+                  },
+                  "effectData": {
+                    "list": [
+                      {
+                        "id": "35ed3f50-1a84-11ee-8f05-c7c6901b16f6",
+                        "type": "firebot:conditional-effects",
+                        "active": true,
+                        "ifs": [
+                          {
+                            "conditionData": {
+                              "mode": "exclusive",
+                              "conditions": [
+                                {
+                                  "type": "firebot:custom",
+                                  "comparisonType": "is",
+                                  "value": null,
+                                  "leftSideValue": "$presetListArg[lurktype]",
+                                  "rightSideValue": "!lurk"
+                                }
+                              ]
+                            },
+                            "effectData": {
+                              "list": [
+                                {
+                                  "id": "47a1b7d0-1a84-11ee-8f05-c7c6901b16f6",
+                                  "type": "firebot:customvariable",
+                                  "active": true,
+                                  "ttl": 15,
+                                  "name": "LurkType",
+                                  "variableData": "Lurking..."
+                                }
+                              ],
+                              "id": "35f10fe0-1a84-11ee-8f05-c7c6901b16f6"
+                            }
+                          }
+                        ],
+                        "otherwiseEffectData": {
+                          "list": [
+                            {
+                              "id": "57a0b820-1a84-11ee-8f05-c7c6901b16f6",
+                              "type": "firebot:customvariable",
+                              "active": true,
+                              "ttl": 15,
+                              "name": "LurkType",
+                              "variableData": "Welcome back!"
+                            }
+                          ],
+                          "id": "35efb050-1a84-11ee-8f05-c7c6901b16f6"
+                        }
+                      },
+                      {
+                        "id": "23c0cd20-1a83-11ee-8f05-c7c6901b16f6",
+                        "type": "firebot:html",
+                        "active": true,
+                        "enterAnimation": "fadeInRight",
+                        "exitAnimation": "fadeOutRight",
+                        "inbetweenAnimation": "none",
+                        "html": "$evalVars[$readFile[E:\\Streaming\\Assets\\Overlays\\visualLurk\\visualLurks.html]]",
+                        "length": "6"
+                      }
+                    ],
+                    "id": "d1d0b25c-1a82-11ee-8f05-c7c6901b16f6"
+                  }
+                }
+              ],
+              "otherwiseEffectData": {
+                "list": [],
+                "id": "d1d0b25d-1a82-11ee-8f05-c7c6901b16f6"
+              },
+              "effectLabel": "If follower, show Avatar"
+            }
+          ],
+          "id": "d1d0b25e-1a82-11ee-8f05-c7c6901b16f6",
+          "queue": "68dee870-ce83-11ed-a85b-135af14bc7e9"
+        },
+        "args": [
+          {
+            "name": "user"
+          },
+          {
+            "name": "lurktype"
+          }
+        ],
+        "sortTags": [
+          "c7299530-6b33-4cfe-9571-984695db5292"
+        ],
+        "id": "d1d0d960-1a82-11ee-bccf-ab1038f73fb5"
+      }
+    ],
+    "timers": [],
+    "viewerRoles": [],
+    "quickActions": []
+  },
+  "requireCurrency": false,
+  "importQuestions": []
+}
