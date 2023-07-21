@@ -1,7 +1,7 @@
 {
   "name": "VisualLurk",
   "description": "Allows chat to set lurk status with a quiet on screen popup",
-  "version": 1,
+  "version": 2,
   "author": "arblane",
   "components": {
     "commands": [
@@ -44,9 +44,9 @@
         "id": "35508cc0-ce6a-11ed-a85b-135af14bc7e9",
         "createdBy": "arblane",
         "createdAt": "2023-03-29T15:45:07-04:00",
-        "count": 46,
+        "count": 52,
         "lastEditBy": "arblane",
-        "lastEditAt": "2023-07-04T12:06:54-04:00",
+        "lastEditAt": "2023-07-21T13:48:31-04:00",
         "ignoreBot": true,
         "description": "You are here, but not active."
       },
@@ -91,9 +91,9 @@
         "id": "468db260-ce6a-11ed-a85b-135af14bc7e9",
         "createdBy": "arblane",
         "createdAt": "2023-03-29T15:45:36-04:00",
-        "count": 13,
+        "count": 14,
         "lastEditBy": "arblane",
-        "lastEditAt": "2023-07-04T12:07:04-04:00",
+        "lastEditAt": "2023-07-13T15:55:19-04:00",
         "ignoreBot": true,
         "description": "You are back"
       }
@@ -134,7 +134,7 @@
                         "type": "firebot:chat",
                         "active": true,
                         "chatter": "Bot",
-                        "message": "$user has switched into lurk mode. Have a good lurk and thanks!"
+                        "message": "$username has switched into lurk mode. Have a good lurk and thanks!"
                       }
                     ],
                     "id": "d1d0b252-1a82-11ee-8f05-c7c6901b16f6"
@@ -148,7 +148,7 @@
                     "type": "firebot:chat",
                     "active": true,
                     "chatter": "Bot",
-                    "message": "$user has switched back into active mode. Welcome back $user!"
+                    "message": "$username has switched back into active mode. Welcome back $user!"
                   }
                 ],
                 "id": "d1d0b254-1a82-11ee-8f05-c7c6901b16f6"
@@ -221,6 +221,21 @@
                         }
                       },
                       {
+                        "id": "d94f7660-27ed-11ee-a6ed-635fdd0bc352",
+                        "type": "firebot:run-effect-list",
+                        "active": true,
+                        "listType": "preset",
+                        "presetListArgs": {
+                          "ThisUser": "$presetListArg[user]"
+                        },
+                        "effectList": {
+                          "list": [],
+                          "id": "0c20fdc0-2672-11ee-99d8-cdc6d6f2dd08"
+                        },
+                        "presetListId": "d43647a0-266a-11ee-83e6-23362b1bd18f",
+                        "effectLabel": "get user color"
+                      },
+                      {
                         "id": "23c0cd20-1a83-11ee-8f05-c7c6901b16f6",
                         "type": "firebot:html",
                         "active": true,
@@ -257,6 +272,59 @@
           "c7299530-6b33-4cfe-9571-984695db5292"
         ],
         "id": "d1d0d960-1a82-11ee-bccf-ab1038f73fb5"
+      },
+      {
+        "name": "[API] Get User Color",
+        "effects": {
+          "list": [
+            {
+              "id": "043b10c0-266b-11ee-83e6-23362b1bd18f",
+              "type": "firebot:http-request",
+              "active": true,
+              "headers": [],
+              "options": {
+                "useTwitchAuth": true
+              },
+              "url": "https://api.twitch.tv/helix/chat/color?user_id=$userId[$presetListArg[ThisUser]]",
+              "method": "GET"
+            },
+            {
+              "id": "1d460bb0-266b-11ee-83e6-23362b1bd18f",
+              "type": "firebot:customvariable",
+              "active": true,
+              "ttl": 30,
+              "name": "userColorJson",
+              "variableData": "$effectOutput[httpResponse]",
+              "effectLabel": "userColorJson"
+            },
+            {
+              "id": "4dab83b0-2671-11ee-99d8-cdc6d6f2dd08",
+              "type": "firebot:customvariable",
+              "active": true,
+              "ttl": 30,
+              "name": "userColorData",
+              "variableData": "$customVariable[userColorJson,data]",
+              "effectLabel": "userColorData"
+            },
+            {
+              "id": "cf28edb0-2671-11ee-99d8-cdc6d6f2dd08",
+              "type": "firebot:customvariable",
+              "active": true,
+              "ttl": 30,
+              "name": "userColor",
+              "effectLabel": "userColor",
+              "variableData": "$customVariable[userColorData,0.color]"
+            }
+          ],
+          "id": "d4366eb0-266a-11ee-83e6-23362b1bd18f"
+        },
+        "args": [
+          {
+            "name": "ThisUser"
+          }
+        ],
+        "sortTags": [],
+        "id": "d43647a0-266a-11ee-83e6-23362b1bd18f"
       }
     ],
     "timers": [],
