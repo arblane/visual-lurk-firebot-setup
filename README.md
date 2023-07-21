@@ -14,5 +14,6 @@ Commands for Chat
 + !unlurk (!back)
 
 Streamer Info
-+ Customize the colors and position to your liking
++ Customize the position to your liking
 + Customize the html file location
++ The chatter's Twitch colors will be used for the background gradient color
