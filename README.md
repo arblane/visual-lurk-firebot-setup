@@ -16,4 +16,4 @@ Commands for Chat
 Streamer Info
 + Customize the position to your liking
 + Customize the html file location
-+ The chatter's Twitch colors will be used for the background gradient color
++ The chatter's Twitch color will be used for the background gradient color
