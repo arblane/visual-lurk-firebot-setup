@@ -1,19 +1,25 @@
-Install
-+ To install, download:
-  + VisualLurk.firebotsetup
-  + visualLurks.html.html
-+ Import setup for Firebot by going to Settings > Setups > Import Setup.
-  + Choose the file "VisualLurk.firebotsetup" from the location you just downloaded it to, then click Import setup. You will need to edit the preset effect to change the location of the html file.
+# Description
+Allows chat to set their lurk state with an on screen popup
 
-Usage
-+ Requirements for Chat
+# Compatibility
+- Firebot 5.58.0+
+
+# Install
++ Download
+  + VisualLurk.firebotsetup
+  + visualLurks.html
++ Import the downloaded firebotsetup file
+  + You will need to edit the preset effect to change the location of the html file.
+
+# Usage
+## Requirements for Chat
 + Must be following the channel
 
-Commands for Chat
+## Commands for Chat
 + !lurk
 + !unlurk (!back)
 
-Streamer Info
+## Streamer Info
 + Customize the position to your liking
 + Customize the html file location
 + The chatter's Twitch color will be used for the background gradient color
