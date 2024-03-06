@@ -2,7 +2,7 @@
 Allows chat to set their lurk state with an on screen popup
 
 # Compatibility
-- Firebot 5.58.0+
+- Firebot 5.61.2+
 
 # Install
 + Download

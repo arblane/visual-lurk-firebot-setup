@@ -1,7 +1,7 @@
 {
   "name": "VisualLurk",
   "description": "Allows chat to set lurk status with a quiet on screen popup",
-  "version": 2.1,
+  "version": 2.2,
   "author": "arblane",
   "components": {
     "commands": [
@@ -46,7 +46,7 @@
         "createdAt": "2023-03-29T15:45:07-04:00",
         "count": 53,
         "lastEditBy": "arblane",
-        "lastEditAt": "2023-11-14T21:19:05-05:00",
+        "lastEditAt": "2024-03-06T12:19:07.561-05:00",
         "ignoreBot": true,
         "description": "You are here, but not active.",
         "type": "custom"
@@ -94,7 +94,7 @@
         "createdAt": "2023-03-29T15:45:36-04:00",
         "count": 15,
         "lastEditBy": "arblane",
-        "lastEditAt": "2023-07-21T14:01:06-04:00",
+        "lastEditAt": "2024-03-06T12:19:23.878-05:00",
         "ignoreBot": true,
         "description": "You are back",
         "type": "custom"
@@ -136,7 +136,7 @@
                         "type": "firebot:chat",
                         "active": true,
                         "chatter": "Bot",
-                        "message": "$user has switched into lurk mode. Have a good lurk and thanks!"
+                        "message": "$#user has switched into lurk mode. Have a good lurk and thanks!"
                       }
                     ],
                     "id": "d1d0b252-1a82-11ee-8f05-c7c6901b16f6"
@@ -150,7 +150,7 @@
                     "type": "firebot:chat",
                     "active": true,
                     "chatter": "Bot",
-                    "message": "$user has switched back into active mode. Welcome back $user!"
+                    "message": "$#user has switched back into active mode. Welcome back $#user!"
                   }
                 ],
                 "id": "d1d0b254-1a82-11ee-8f05-c7c6901b16f6"
@@ -201,7 +201,8 @@
                                   "active": true,
                                   "ttl": 15,
                                   "name": "LurkType",
-                                  "variableData": "Lurking..."
+                                  "variableData": "Lurking...",
+                                  "effectLabel": "Lurking..."
                                 }
                               ],
                               "id": "35f10fe0-1a84-11ee-8f05-c7c6901b16f6"
@@ -216,7 +217,8 @@
                               "active": true,
                               "ttl": 15,
                               "name": "LurkType",
-                              "variableData": "Welcome back!"
+                              "variableData": "Welcome back!",
+                              "effectLabel": "Welcome back!"
                             }
                           ],
                           "id": "35efb050-1a84-11ee-8f05-c7c6901b16f6"
